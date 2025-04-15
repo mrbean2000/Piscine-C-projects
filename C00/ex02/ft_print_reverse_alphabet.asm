@@ -6,6 +6,7 @@ STDOUT		equ	1
 ALPHA_SET	equ	26
 WRITE		equ	1
 
+section .text
 global ft_print_reverse_alphabet
 ft_print_reverse_alphabet:
 	push	rax
