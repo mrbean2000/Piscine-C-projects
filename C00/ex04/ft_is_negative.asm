@@ -6,12 +6,12 @@ extern	CHAR_SIZE
 STDOUT		equ	1
 WRITE		equ	1
 SIZE		equ	1
-
+COUNT		equ	1
 SIGN_FLAG_POS	equ	15
 
 ; INT_SIZE + CHAR_SIZE + n * 8 byte address from push in this function
 ; plus 8 bytes for return address
-TOTAL_OFFSET	equ	49
+TOTAL_OFFSET	equ	48
 
 global ft_is_negative
 ft_is_negative:
