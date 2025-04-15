@@ -9,6 +9,7 @@ STDIN	equ	1
 COUNT	equ	1
 WRITE	equ	0x01
 
+section .text
 global ft_putchar
 ft_putchar:
 	push	rbp
