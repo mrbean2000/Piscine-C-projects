@@ -8,7 +8,6 @@ global _start
 
 _start:
 	mov	rbp, rsp
-	sub	rsp, 1
 
 	push	rdi
 	mov	rdi, 'a' ; we will be declaring a local variable in the ft_putchar function
