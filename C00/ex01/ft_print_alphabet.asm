@@ -14,6 +14,7 @@ ft_print_alphabet:
 	push	rsi
 	push	rdx
 	push	rcx
+	push	rbp
 
 	mov	rbp, rsp
 	sub	rsp, SIZE ; declare the local variable here
@@ -39,6 +40,7 @@ ft_print_alphabet:
 	loop	.print_loop
 
 	add	rsp, SIZE 
+	pop	rbp
 	pop	rcx
 	pop	rdx
 	pop	rsi
