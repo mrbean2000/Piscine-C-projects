@@ -3,6 +3,7 @@
 
 %include 'ft_print_alphabet.asm'
 
+section .text
 global _start
 _start:
 	mov	rbp, rsp

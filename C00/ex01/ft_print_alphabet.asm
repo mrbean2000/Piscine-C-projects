@@ -7,6 +7,7 @@ SIZE		equ	1
 WRITE		equ	1
 ALPHA_SET	equ	26
 
+section .text
 global ft_print_alphabet
 ft_print_alphabet:
 	push	rax
