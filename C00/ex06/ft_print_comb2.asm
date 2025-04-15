@@ -5,6 +5,7 @@
 
 DEPTH	equ	2
 
+section .text
 global ft_print_comb2
 ft_print_comb2:
 	push	rdx
