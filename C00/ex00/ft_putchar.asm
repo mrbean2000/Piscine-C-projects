@@ -12,23 +12,24 @@ WRITE	equ	0x01
 global ft_putchar
 ft_putchar:
 	push	rbp
-	push	rdi
 	push	rsi
 	push	rdx
 	push	rax
 
 	mov	rbp, rsp
+	sub	rsp, 1 * COUNT	; number of bytes to allocate for the local variable.
+	mov	byte [rbp - 1], dil
 
 	mov	rax, WRITE	; refer to the syscall table in the URL above
-	mov	rsi, rdi
+	lea	rsi, [rbp - 1]
 	mov	rdi, STDIN
 	mov	rdx, COUNT
 	syscall
 
+	add	rsp, 1 * COUNT
 	pop	rax
 	pop	rdx
 	pop	rsi
-	pop	rdi
 	pop	rbp
 
 	ret

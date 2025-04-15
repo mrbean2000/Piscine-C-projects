@@ -10,10 +10,10 @@ _start:
 	mov	rbp, rsp
 	sub	rsp, 1
 
-	mov	byte [rbp - 1], 'a';
-	lea	rdi, [rbp - 1];
-
+	push	rdi
+	mov	rdi, 'a' ; we will be declaring a local variable in the ft_putchar function
 	call	ft_putchar
+	pop	rdi
 
 	mov	rax, 0x3c
 	mov	rdi, 0

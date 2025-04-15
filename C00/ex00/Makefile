@@ -1,6 +1,6 @@
 PROG_NAME = ft_putchar
 
-ASM_FILES = main.asm
+ASM_FILES = main.asm 
 
 OBJ_FILES = $(ASM_FILES:.asm=.o)
 
@@ -11,11 +11,13 @@ all: $(PROG_NAME)
 $(PROG_NAME): $(OBJ_FILES)
 	ld -o $@ $^
 
-$(OBJ_FILES): $(ASM_FILES)
-	nasm -f $(OBJ_FORMAT) $^
+main.o: main.asm ft_putchar.asm
+	nasm -f $(OBJ_FORMAT) $<
 
 clean:
 	rm -f $(OBJ_FILES)
 
 fclean: clean
 	rm -f $(PROG_NAME)
+
+re: fclean all
