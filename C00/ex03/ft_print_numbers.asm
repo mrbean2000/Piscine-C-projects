@@ -7,6 +7,7 @@ LOOP_COUNT	equ	10
 WRITE		equ	1
 WRITE_SIZE	equ	1
 
+section .text
 global ft_print_numbers
 ft_print_numbers:
 	push	rax

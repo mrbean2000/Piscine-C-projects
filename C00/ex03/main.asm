@@ -4,6 +4,7 @@
 
 %include "ft_print_numbers.asm"
 
+section .text
 global _start
 _start:
 	mov	rbp, rsp
