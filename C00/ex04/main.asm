@@ -7,6 +7,7 @@
 
 INT_SIZE	equ	4
 
+section .text
 global _start
 _start:
 	mov	rbp, rsp

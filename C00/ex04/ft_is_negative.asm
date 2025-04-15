@@ -13,6 +13,7 @@ SIGN_FLAG_POS	equ	15
 ; plus 8 bytes for return address
 TOTAL_OFFSET	equ	48
 
+section .text
 global ft_is_negative
 ft_is_negative:
 	push	rax
