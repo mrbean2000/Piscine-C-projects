@@ -17,6 +17,7 @@ ft_putnbr:
 	push	rdi
 	push	rsi
 	push	rdx
+	push	rbp
 
 	mov	rbp, rsp
 	sub	rsp, 1
@@ -73,6 +74,7 @@ ft_putnbr:
 .exit:
 	add	rsp, 1
 
+	pop	rbp
 	pop	rdx
 	pop	rsi
 	pop	rdi
