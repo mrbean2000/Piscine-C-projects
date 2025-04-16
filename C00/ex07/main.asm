@@ -12,7 +12,7 @@ _start:
 
 	mov	rbp, rsp
 
-	mov	rdi, 214748364
+	mov	rdi, 214748364	; change the value here
 	call	ft_putnbr
 	pop	rdi
 
