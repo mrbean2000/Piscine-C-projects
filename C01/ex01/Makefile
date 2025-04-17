@@ -2,7 +2,7 @@ PROG_NAME = ft_ultimate_ft
 
 FORMAT = elf64
 
-CFLAGS = -Wall -Wextra -Werror -z noexecstack
+CFLAGS = -Wall -Wextra -Werror -z noexecstack -no-pie
 
 all: $(PROG_NAME)
 
