@@ -8,7 +8,7 @@
 
 section .data
 
-ARRAY		dd	1, 2, 3, 4, 5, 6, 7, 8, 9
+ARRAY		dd	12312, 333333, -3888, -123045, -589745, 0x80000000, -34534, 90345, -23423
 ARRAY_LEN	equ	$ - ARRAY
 NEWLINE		db	10
 

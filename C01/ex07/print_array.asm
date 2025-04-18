@@ -3,6 +3,9 @@
 WRITE	equ	1
 STDOUT	equ	1
 
+section .rodata
+INT_MIN	db	"-2147483648"
+
 section .text
 
 global print_array
@@ -25,7 +28,7 @@ print_array:
 	xor	rdx, rdx
 
 .print_num:
-	mov	edi, [rax + rdx * 4]
+	movsx	rdi, dword [rax + rdx * 4]
 	call	print_num
 	inc	rdx
 	cmp	rcx, 1
@@ -69,10 +72,21 @@ print_num:
 	mov	rbp, rsp
 	sub	rsp, 1
 
-	cmp	edi, 0
+	cmp	edi, 0x80000000
+	jne	.process
+
+	mov	rax, WRITE
+	mov	rdi, STDOUT
+	mov	rsi, INT_MIN
+	mov	rdx, 11
+	syscall
+
+	jmp	.exit
+
+.process:
+	cmp	rdi, 0
 	jge	.skip_neg
 
-	push	rdi
 	mov	byte [rbp - 1], '-'
 	mov	rax, WRITE
 	mov	rdi, STDOUT
@@ -82,7 +96,6 @@ print_num:
 
 	mov	rdi, [rbp + 0x28]
 	neg	rdi
-	pop	rdi
 .skip_neg:
 	mov	rax, rdi
 	xor	rdx, rdx
@@ -105,6 +118,7 @@ print_num:
 	mov	rdx, 1
 	syscall
 
+.exit:
 	add	rsp, 1
 
 	pop	rcx
