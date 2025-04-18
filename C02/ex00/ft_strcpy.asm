@@ -4,8 +4,9 @@ global ft_strcpy
 ft_strcpy:
 	push	rdi
 	push	rsi
-	push	rax
+	push	rbx
 
+	mov	rbx, rdi
 .copy_str:
 	movzx	rax, byte [rsi]
 	mov	byte [rdi], al
@@ -14,7 +15,9 @@ ft_strcpy:
 	cmp	rax, 0
 	jne	.copy_str
 
-	pop	rax
+	mov	rax, rbx
+
+	pop	rbx
 	pop	rsi
 	pop	rdi
 

@@ -22,6 +22,7 @@ _start:
 
 	call	ft_strcpy
 
+	mov	rdi, rax
 	call	ft_putstr
 
 	mov	rax, 0x3c
@@ -38,6 +39,7 @@ ft_putstr:
 	push	rdx
 	push	rcx
 
+	xor	rax, rax
 	xor	rcx, rcx
 	not	rcx
 	repnz	scasb
