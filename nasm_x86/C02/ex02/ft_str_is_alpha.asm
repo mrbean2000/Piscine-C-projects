@@ -17,6 +17,8 @@ ft_str_is_alpha:
 
 	not	rcx
 	dec	rcx
+	jz	.true
+
 	mov	rdi, [rbp + 0x8]
 
 .loop_check:
