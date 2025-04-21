@@ -31,7 +31,6 @@ ft_strupcase:
 
 .next:
 	loop	.loop_check
-	
 
 	mov	rax, rdi
 
