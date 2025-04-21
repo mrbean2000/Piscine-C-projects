@@ -12,6 +12,7 @@ ft_strupcase:
 	xor	rcx, rcx
 	not	rcx
 
+	xor	rax, rax
 	repnz	scasb
 
 	not	rcx
