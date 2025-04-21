@@ -17,6 +17,7 @@ ft_str_is_numeric:
 
 	not	rcx
 	dec	rcx
+	jz	.true
 
 	mov	rdi, [rbp + 0x8]
 
@@ -29,6 +30,7 @@ ft_str_is_numeric:
 
 	loop	.loop_check
 
+.true:
 	mov	rax, 1
 	jmp	.exit
 
